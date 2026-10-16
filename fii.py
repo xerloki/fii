@@ -567,7 +567,7 @@ BUBBLES_HTML = """
         ctx.textAlign = 'left';
         ctx.fillStyle = '#8794a8';
         ctx.font = '400 ' + Math.round(20 * u) + 'px ' + FONT;
-        ctx.fillText('O tamanho da bolha indica a intensidade da variação.', pad, oy + ch + 42 * u);
+        ctx.fillText('Desenvolvido por @nazareno.rar', pad, oy + ch + 42 * u);
         ctx.fillStyle = '#5d6b80';
         ctx.font = '400 ' + Math.round(18 * u) + 'px ' + FONT;
         ctx.fillText('Fonte: Yahoo Finance · preço de fechamento, sem proventos · não é recomendação de investimento', pad, oy + ch + 74 * u);
@@ -643,7 +643,7 @@ def render_bubbles(dados, label: str, title: str):
     html = BUBBLES_HTML.replace("__DATA_JSON__", json.dumps(payload, ensure_ascii=False))
     components.html(html, height=620, scrolling=False)
     st.markdown(
-        '<div class="hint">O tamanho da bolha indica a intensidade da variação. '
+        '<div class="hint">Desenvolvido por @nazareno.rar. '
         "Arraste para mover, toque em uma bolha para ver o preço e use "
         "“Compartilhar” para gerar uma imagem.</div>",
         unsafe_allow_html=True,
